@@ -26,13 +26,4 @@
         app:layout_constraintVertical_bias="1.0" />
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="104dp"
-        android:layout_height="54dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

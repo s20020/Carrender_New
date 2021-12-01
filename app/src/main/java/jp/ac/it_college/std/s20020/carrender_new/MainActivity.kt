@@ -25,21 +25,17 @@ class MainActivity : AppCompatActivity() {
 
         binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             Toast.makeText(this, "" + year + "-" + (month+1) + "-" + dayOfMonth, Toast.LENGTH_LONG).show()
-        }
-
-
-
-        binding.button.setOnClickListener {
-            val myBottomSheet = MyBottomSheet()
-            myBottomSheet.show(supportFragmentManager, "navigation_bottom_sheet")
+            runBottom()
 
         }
+
+
+    }
+    fun runBottom() {
+        val myBottomSheet = MyBottomSheet()
+        myBottomSheet.show(supportFragmentManager, "navigation_bottom_sheet")
+
     }
 
-    inner class MyBottomSheet() : BottomSheetDialogFragment() {
-        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-            var view = inflater.inflate(R.layout.bottom,container,false)
-            return view
-        }
-    }
+
 }
