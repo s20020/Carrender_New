@@ -13,6 +13,7 @@ import android.widget.SpinnerAdapter
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import jp.ac.it_college.std.s20020.carrender_new.databinding.ActivityMainBinding
+import java.time.Month
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -25,14 +26,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
             Toast.makeText(this, "" + year + "-" + (month+1) + "-" + dayOfMonth, Toast.LENGTH_LONG).show()
-            runBottom()
+            runBottom(year, month, dayOfMonth)
 
         }
 
 
     }
-    fun runBottom() {
+    fun runBottom(year: Int, month: Int, day: Int) {
         val myBottomSheet = MyBottomSheet()
+        myBottomSheet.send(year, month, day)
         myBottomSheet.show(supportFragmentManager, "navigation_bottom_sheet")
 
     }
