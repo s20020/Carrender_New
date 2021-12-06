@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        binding.calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
-            Toast.makeText(this, "" + year + "-" + (month+1) + "-" + dayOfMonth, Toast.LENGTH_LONG).show()
-            runBottom(year, month, dayOfMonth)
+        binding.calendarView.setOnDateChangeListener { view, year, month, dayOffMonth ->
+            Toast.makeText(this, "" + year + "-" + (month+1) + "-" + dayOffMonth, Toast.LENGTH_LONG).show()
+            runBottom(year, month, dayOffMonth)
 
         }
 
