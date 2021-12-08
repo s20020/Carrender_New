@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.calendarView.setOnDateChangeListener { view, year, month, dayOffMonth ->
             Toast.makeText(this, "" + year + "-" + (month+1) + "-" + dayOffMonth, Toast.LENGTH_LONG).show()
-            runButton(year, month+1, dayOffMonth)
+            runBottom(year, month+1, dayOffMonth)
 
         }
 
 
     }
-    fun runButton(year: Int, month: Int, day: Int) {
+    fun runBottom(year: Int, month: Int, day: Int) {
         val myBottomSheet = MyBottomSheet()
         myBottomSheet.send(year, month, day)
         myBottomSheet.show(supportFragmentManager, "navigation_bottom_sheet")
